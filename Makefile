@@ -7,7 +7,5 @@ build:
 	$(ENGINE) build -t $(IMAGE_NAME) .
 
 run:
-	@ifeq ($(ZIPDIR),)
-	$(error Usage: make run ZIPDIR=/path/to/zip/directory)
-	@endif
-	$(ENGINE) run --rm -v $(ZIPDIR):/zip $(IMAGE_NAME)
+	@if [ -z "$(ZIPDIR)" ]; then echo "Usage: make run ZIPDIR=/path/to/zip/directory"; exit 1; fi
+	@$(ENGINE) run --rm -v $(ZIPDIR):/zip $(IMAGE_NAME)
