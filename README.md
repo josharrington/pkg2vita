@@ -39,6 +39,13 @@ make build
 make run ZIPDIR=/path/to/zip/directory
 ```
 
+To use `podman` instead of `docker`, pass `ENGINE=podman`:
+
+```bash
+make ENGINE=podman build
+make ENGINE=podman run ZIPDIR=/path/to/zip/directory
+```
+
 ### Standalone Python
 
 Install `7zip` and `pkg2zip` on your system, then run:
@@ -68,6 +75,13 @@ Vita Games/
 ```bash
 make build
 make run ZIPDIR=/path/to/zip/directory
+```
+
+To use `podman` instead of `docker`:
+
+```bash
+make ENGINE=podman build
+make ENGINE=podman run ZIPDIR=/path/to/zip/directory
 ```
 
 The script processes all `.zip` files in the directory. Output is written back to the same directory.
